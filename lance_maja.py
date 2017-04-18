@@ -17,7 +17,7 @@ class OptionParser (optparse.OptionParser):
       if getattr(self.values, option.dest) is None:
           self.error("%s option not supplied" % option)
 
-######################lecture fichier répértoire#########################
+######################lecture fichier rÃ©pÃ©rtoire#########################
 def readParam(filename):
 	f = open(filename, "r" )
 	lines = []
@@ -58,7 +58,7 @@ def ajouter_conf(repConf,repTravConf):
     os.symlink(repConf,repTravConf)
 
 
-#========== Paramètres
+#========== ParamÃ¨tres
 if len(sys.argv) == 1:
 	prog = os.path.basename(sys.argv[0])
 	print '      '+sys.argv[0]+' [options]' 
@@ -133,7 +133,7 @@ else :
     listeProd=glob.glob(repL1+"/S2?_OPER_PRD_MSIL1C*.SAFE/GRANULE/*%s*"%(tuile))
     listeProd=listeProd+glob.glob(repL1+"/S2?_MSIL1C*.SAFE/GRANULE/*%s*"%(tuile))
 
-# liste des images à traiter
+# liste des images Ã  traiter
 dateProd=[]
 dateAcq=[]
 listeProdFiltree=[]
@@ -169,7 +169,7 @@ for d in dates_diff:
  
     dpmax=""
     ind=-1
-    #on cherche la dernière date de production
+    #on cherche la derniÃ¨re date de production
     for i in range(0,nb):
         ind=dateAcq.index(d,ind+1)
         dp=dateProd[ind]
@@ -177,7 +177,7 @@ for d in dates_diff:
             dpmax=dp
 
  
-    #on garde les produits avec la date de production la plus récente
+    #on garde les produits avec la date de production la plus rÃ©cente
     ind=dateProd.index(dpmax)
     print dpmax, ind
     prod_par_dateAcq[d]=listeProdFiltree[ind]
@@ -186,7 +186,7 @@ for d in dates_diff:
     print d,prod_par_dateAcq[d]
 
 print
-#Recherche de la première date à traiter
+#Recherche de la premiÃ¨re date Ã  traiter
 
 derniereDate=""
 for d in dates_diff:
@@ -195,7 +195,7 @@ for d in dates_diff:
         derniereDate=d
 
 
-print "dernière date traitee :", derniereDate
+print "derniÃ¨re date traitee :", derniereDate
 
 ###############Boucle sur les produits
 nb_dates=len(dates_diff)
@@ -217,7 +217,7 @@ for i in range(nb_dates):
         if i==0 :
             nb_prod_backward=min(len(dates_diff),nb_backward)
             for date_backward in dates_diff[0:nb_prod_backward]:
-                print "#### dates à traiter", date_backward
+                print "#### dates Ã  traiter", date_backward
                 print prod_par_dateAcq[date_backward]
                 os.symlink(prod_par_dateAcq[date_backward],repTrav+"/in/"+os.path.basename(prod_par_dateAcq[date_backward]))
             ajouter_gipp(repGipp,repTrav+"/in/",tuile)
@@ -232,7 +232,7 @@ for i in range(nb_dates):
             os.system(commande)
          #else mode nominal
         else :
-            #recherche du L2 précédent
+            #recherche du L2 prÃ©cÃ©dent
             for dAnterieure in dates_diff[0:i]:
                 nom_courant="%s/%s"%(repL2,nomL2_par_dateAcq[dAnterieure])
                 print nom_courant
