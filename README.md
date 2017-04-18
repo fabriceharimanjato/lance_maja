@@ -1,4 +1,4 @@
-Originally from http://tully.ups-tlse.fr/olivier/lance_maja + directories arguments added
+Originally from http://tully.ups-tlse.fr/olivier/lance_maja (directories arguments added)
 
 # Basic Supervisor for MAJA processor
 
