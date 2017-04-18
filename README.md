@@ -1,3 +1,5 @@
+Originally from http://tully.ups-tlse.fr/olivier/lance_maja + directories arguments added
+
 # Basic Supervisor for MAJA processor
 
 This tool enables to process successively all files in a time series of MAJA images, stored in a folder. The initialisation of the time series is performed with the "backward mode", and then all the dates are processed in "nominal" mode. But no control is done on the outputs, and it does not check if the time elapsed between two successive products is not too long and would require restarting the initialisation in backward mode.
